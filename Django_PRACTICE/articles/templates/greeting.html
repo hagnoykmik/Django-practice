@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+  <h1>안녕하세요. 저는 {{ name }} 입니다.</h1>  
+  <p>제 이름의 길이는 {{ name|length }}입니다.</p>
+
+  {% comment %} <p>제가 좋아하는 음식은 {{ foods|join:" & "}}입니다.</p> {% endcomment %}
+  
+  {% for food in foods %}
+    <p>{{ forloop.counter0 }}번째 음식 {{ food }}</p>
+  {% endfor %}
+
+  <p>다섯 글자가 넘는 음식은 {{ five_foods }}입니다.</p>
+    <a href="{% url 'index' %}">홈으로 이동</a>
+
+  {# <p>이 것은 주석입니다.</p> #}
+
+  {% comment %} 
+  <p>이 것은 주석입니다.</p>
+  <p>이 것은 주석입니다.</p>   
+  {% endcomment %}
+
+</body>
+
+{% endblock content %}
