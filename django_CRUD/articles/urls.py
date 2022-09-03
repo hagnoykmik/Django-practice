@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 app_name = 'articles'
+
 # url의 name space
 urlpatterns = [
     path('index/', views.index, name='index'),
